@@ -1,0 +1,2909 @@
+<?xml version="1.0" ?>
+<robot name="HEBI_Hexapod_1">
+  <!--
+  <link name="world"/>
+  <joint name="world_base_link" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+ -->
+  <!--Joints-->
+  <joint name="base_link_to_a_2095_01_6Z" type="fixed">
+    <parent link="base_link"/>
+    <child link="a_2095_01_6Z"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_11Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_11Z"/>
+    <origin rpy="2.09439510229 -1.57079632679 0.0" xyz="-0.0433012701559 -0.0250000000011 -0.001"/>
+  </joint>
+  <joint name="tubepar_11Z_to_a_2039_02_10Z" type="fixed">
+    <parent link="tubepar_11Z"/>
+    <child link="a_2039_02_10Z"/>
+    <origin rpy="1.57079632679 2.49978080284e-14 1.57079632679" xyz="-1.66780753732e-18 0.127 -7.1054273576e-18"/>
+  </joint>
+  <joint name="a_2039_02_10Z_to_hebi_x5_4_16Z" type="fixed">
+    <parent link="a_2039_02_10Z"/>
+    <child link="hebi_x5_4_16Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.3106904246e-14" xyz="0.014 8.42557231529e-17 0.02"/>
+  </joint>
+  <joint name="Leg6/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_16Z"/>
+    <child link="a_2070_01r_23Z"/>
+    <axis xyz="2.0207829073e-17 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="0.0 -3.34767643574e-17 3.14159265359" xyz="6.40449343592e-17 -1.06407608566e-17 0.03"/>
+  </joint>
+  <gazebo reference="Leg6/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01r_23Z_to_hebi_x5_9_18Z" type="fixed">
+    <parent link="a_2070_01r_23Z"/>
+    <child link="hebi_x5_9_18Z"/>
+    <origin rpy="1.57079632679 -6.16297582204e-33 3.14159265359" xyz="-8.631169369e-17 -0.0225277504 0.055"/>
+  </joint>
+  <joint name="Leg6/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_18Z"/>
+    <child link="a_2038_02_21Z"/>
+    <axis xyz="0.0 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.7" upper="1.6" velocity="100"/>
+    <origin rpy="0.0 -1.89345633518e-17 0.0" xyz="-4.61852778244e-17 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg6/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_21Z_to_tubepar_20Z" type="fixed">
+    <parent link="a_2038_02_21Z"/>
+    <child link="tubepar_20Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -9.06738292808e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_20Z_to_a_2039_02_19Z" type="fixed">
+    <parent link="tubepar_20Z"/>
+    <child link="a_2039_02_19Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="-1.42108547152e-17 -0.254 -3.37030956224e-18"/>
+  </joint>
+  <joint name="a_2039_02_19Z_to_hebi_x5_4_24Z" type="fixed">
+    <parent link="a_2039_02_19Z"/>
+    <child link="hebi_x5_4_24Z"/>
+    <origin rpy="1.22464679915e-16 1.89345633518e-17 2.50240867501e-14" xyz="0.014 3.32405432175e-16 0.02"/>
+  </joint>
+  <joint name="Leg6/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_24Z"/>
+    <child link="a_2038_02_22Z"/>
+    <axis xyz="1.11022302463e-15 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="6.16297582204e-33 1.89345633518e-17 -3.08148791102e-33" xyz="-5.86197757002e-17 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg6/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_22Z_to_tubepar_17Z" type="fixed">
+    <parent link="a_2038_02_22Z"/>
+    <child link="tubepar_17Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.12622166549e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_17Z_to_pp_2057_01_44Z" type="fixed">
+    <parent link="tubepar_17Z"/>
+    <child link="pp_2057_01_44Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 5.09231249648e-17" xyz="-4.26325641456e-17 -0.254 3.37030956224e-18"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_5Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_5Z"/>
+    <origin rpy="3.14159265359 -1.57079632679 0.0" xyz="1e-23 -0.05 -0.001"/>
+  </joint>
+  <joint name="tubepar_5Z_to_a_2039_02_12Z" type="fixed">
+    <parent link="tubepar_5Z"/>
+    <child link="a_2039_02_12Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 1.57079632679" xyz="1.78563570607e-18 0.076 -5.55111124636e-18"/>
+  </joint>
+  <joint name="a_2039_02_12Z_to_hebi_x5_4_35Z" type="fixed">
+    <parent link="a_2039_02_12Z"/>
+    <child link="hebi_x5_4_35Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.47905995925e-14" xyz="0.014 3.24017024904e-16 0.02"/>
+  </joint>
+  <joint name="Leg4/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_35Z"/>
+    <child link="a_2070_01r_42Z"/>
+    <axis xyz="5.08239990574e-17 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="-1.23259516441e-32 -3.34767643574e-17 3.14159265359" xyz="-5.53186988891e-17 -2.96636102637e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg4/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01r_42Z_to_hebi_x5_9_37Z" type="fixed">
+    <parent link="a_2070_01r_42Z"/>
+    <child link="hebi_x5_9_37Z"/>
+    <origin rpy="1.57079632679 9.24446373306e-33 3.14159265359" xyz="-1.06622141481e-16 -0.0225277504 0.055"/>
+  </joint>
+  <joint name="Leg4/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_37Z"/>
+    <child link="a_2038_02_40Z"/>
+    <axis xyz="4.0677583653e-16 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.7" upper="1.6" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-7.30618531953e-17 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg4/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_40Z_to_tubepar_39Z" type="fixed">
+    <parent link="a_2038_02_40Z"/>
+    <child link="tubepar_39Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.3200565876e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_39Z_to_a_2039_02_38Z" type="fixed">
+    <parent link="tubepar_39Z"/>
+    <child link="a_2039_02_38Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="-3.78956831697e-18 -0.254 4.4061976138e-18"/>
+  </joint>
+  <joint name="a_2039_02_38Z_to_hebi_x5_4_43Z" type="fixed">
+    <parent link="a_2039_02_38Z"/>
+    <child link="hebi_x5_4_43Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.50240867501e-14" xyz="0.014 3.32834058554e-16 0.02"/>
+  </joint>
+  <joint name="Leg4/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_43Z"/>
+    <child link="a_2038_02_41Z"/>
+    <axis xyz="-4.4493975303e-16 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-7.01916114517e-17 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg4/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_41Z_to_tubepar_36Z" type="fixed">
+    <parent link="a_2038_02_41Z"/>
+    <child link="tubepar_36Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.49237580859e-17 0.02"/>
+  </joint>
+  <joint name="tubepar_36Z_to_pp_2057_01_45Z" type="fixed">
+    <parent link="tubepar_36Z"/>
+    <child link="pp_2057_01_45Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 3.88726144769e-19" xyz="6.48879806078e-18 -0.254 9.8046571014e-18"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_1Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_1Z"/>
+    <origin rpy="-2.09439510229 -1.57079632679 0.0" xyz="0.0433012702137 -0.0249999999987 -0.001"/>
+  </joint>
+  <joint name="tubepar_1Z_to_a_2039_02_7Z" type="fixed">
+    <parent link="tubepar_1Z"/>
+    <child link="a_2039_02_7Z"/>
+    <origin rpy="1.57079632679 2.50167657815e-14 1.57079632679" xyz="-1.77882983978e-18 0.127 1.29164951977e-34"/>
+  </joint>
+  <joint name="a_2039_02_7Z_to_hebi_x5_4_56Z" type="fixed">
+    <parent link="a_2039_02_7Z"/>
+    <child link="hebi_x5_4_56Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.30249982575e-14" xyz="0.014 7.18212252771e-17 0.02"/>
+  </joint>
+  <joint name="Leg2/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_56Z"/>
+    <child link="a_2070_01r_63Z"/>
+    <axis xyz="2.0207829073e-17 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="0.0 -3.34767643574e-17 3.14159265359" xyz="6.40449343592e-17 -3.02518678086e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg2/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01r_63Z_to_hebi_x5_9_58Z" type="fixed">
+    <parent link="a_2070_01r_63Z"/>
+    <child link="hebi_x5_9_58Z"/>
+    <origin rpy="1.57079632679 -0.0 3.14159265359" xyz="-1.36049685193e-16 -0.0225277504 0.055"/>
+  </joint>
+  <joint name="Leg2/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_58Z"/>
+    <child link="a_2038_02_61Z"/>
+    <axis xyz="1.88737914186e-15 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.7" upper="1.6" velocity="100"/>
+    <origin rpy="6.16297582204e-33 6.56929018481e-17 7.70371977755e-33" xyz="-5.3290705182e-17 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg2/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_61Z_to_tubepar_60Z" type="fixed">
+    <parent link="a_2038_02_61Z"/>
+    <child link="tubepar_60Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -9.06738292808e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_60Z_to_a_2039_02_59Z" type="fixed">
+    <parent link="tubepar_60Z"/>
+    <child link="a_2039_02_59Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="0.0 -0.254 -3.37030956224e-18"/>
+  </joint>
+  <joint name="a_2039_02_59Z_to_hebi_x5_4_64Z" type="fixed">
+    <parent link="a_2039_02_59Z"/>
+    <child link="hebi_x5_4_64Z"/>
+    <origin rpy="1.22464679915e-16 -6.56929018481e-17 2.50240867501e-14" xyz="0.014 3.32405432175e-16 0.02"/>
+  </joint>
+  <joint name="Leg2/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_64Z"/>
+    <child link="a_2038_02_62Z"/>
+    <axis xyz="-4.99600361081e-16 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="0.0 -6.56929018481e-17 -6.16297582204e-33" xyz="-5.68434188608e-17 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg2/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_62Z_to_tubepar_57Z" type="fixed">
+    <parent link="a_2038_02_62Z"/>
+    <child link="tubepar_57Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.12622166549e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_57Z_to_pp_2057_01_14Z" type="fixed">
+    <parent link="tubepar_57Z"/>
+    <child link="pp_2057_01_14Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 -2.54615624824e-17" xyz="2.84217094304e-17 -0.254 3.37030956224e-18"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_9Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_9Z"/>
+    <origin rpy="-2.09439510229 -1.57079632679 0.0" xyz="-0.0433012701559 0.0250000000011 -0.001"/>
+  </joint>
+  <joint name="tubepar_9Z_to_a_2039_02_13Z" type="fixed">
+    <parent link="tubepar_9Z"/>
+    <child link="a_2039_02_13Z"/>
+    <origin rpy="-1.57079632679 -2.50167657815e-14 -1.57079632679" xyz="1.13495302842e-19 -0.127 2.27373675443e-16"/>
+  </joint>
+  <joint name="a_2039_02_13Z_to_hebi_x5_4_53Z" type="fixed">
+    <parent link="a_2039_02_13Z"/>
+    <child link="hebi_x5_4_53Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.30249982575e-14" xyz="0.014 3.08964863337e-16 0.02"/>
+  </joint>
+  <joint name="Leg5/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_53Z"/>
+    <child link="a_2070_01l_48Z"/>
+    <axis xyz="-4.1024510873e-17 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="-1.23259516441e-32 8.89879155574e-17 3.14159265359" xyz="6.22079641608e-17 -3.02518678086e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg5/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01l_48Z_to_hebi_x5_9_46Z" type="fixed">
+    <parent link="a_2070_01l_48Z"/>
+    <child link="hebi_x5_9_46Z"/>
+    <origin rpy="-1.57079632679 6.12323399574e-17 -3.14159265359" xyz="-5.94814061184e-17 0.0225 0.055"/>
+  </joint>
+  <joint name="Leg5/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_46Z"/>
+    <child link="a_2038_02_50Z"/>
+    <axis xyz="-1.05471187339e-15 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-1.6" upper="0.7" velocity="100"/>
+    <origin rpy="6.16297582204e-33 -5.08187337107e-17 1.54074395551e-33" xyz="-7.1054273576e-18 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg5/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_50Z_to_tubepar_54Z" type="fixed">
+    <parent link="a_2038_02_50Z"/>
+    <child link="tubepar_54Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.26499954533e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_54Z_to_a_2039_02_51Z" type="fixed">
+    <parent link="tubepar_54Z"/>
+    <child link="a_2039_02_51Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+  </joint>
+  <joint name="a_2039_02_51Z_to_hebi_x5_4_52Z" type="fixed">
+    <parent link="a_2039_02_51Z"/>
+    <child link="hebi_x5_4_52Z"/>
+    <origin rpy="1.22464679915e-16 5.08187337107e-17 2.50240867501e-14" xyz="0.014 3.46987817078e-16 0.02"/>
+  </joint>
+  <joint name="Leg5/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_52Z"/>
+    <child link="a_2038_02_49Z"/>
+    <axis xyz="3.33066907388e-16 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="0.0 5.08187337107e-17 -4.62223186653e-33" xyz="-1.36779476634e-16 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg5/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_49Z_to_tubepar_47Z" type="fixed">
+    <parent link="a_2038_02_49Z"/>
+    <child link="tubepar_47Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -7.67960412962e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_47Z_to_pp_2057_01_55Z" type="fixed">
+    <parent link="tubepar_47Z"/>
+    <child link="pp_2057_01_55Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 -1.04956059088e-16" xyz="1.42108547152e-17 -0.254 1.08405451559e-17"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_4Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_4Z"/>
+    <origin rpy="2.09439510229 -1.57079632679 0.0" xyz="0.0433012701559 0.0250000000011 -0.001"/>
+  </joint>
+  <joint name="tubepar_4Z_to_a_2039_02_2Z" type="fixed">
+    <parent link="tubepar_4Z"/>
+    <child link="a_2039_02_2Z"/>
+    <origin rpy="-1.57079632679 -2.49978080284e-14 -1.57079632679" xyz="1.13495302842e-19 -0.127 2.13162820728e-16"/>
+  </joint>
+  <joint name="a_2039_02_2Z_to_hebi_x5_4_32Z" type="fixed">
+    <parent link="a_2039_02_2Z"/>
+    <child link="hebi_x5_4_32Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.3106904246e-14" xyz="0.014 3.15182112275e-16 0.02"/>
+  </joint>
+  <joint name="Leg1/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_32Z"/>
+    <child link="a_2070_01l_27Z"/>
+    <axis xyz="-4.1024510873e-17 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="-1.23259516441e-32 8.89879155574e-17 3.14159265359" xyz="6.22079641608e-17 -1.06407608566e-17 0.03"/>
+  </joint>
+  <gazebo reference="Leg1/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01l_27Z_to_hebi_x5_9_25Z" type="fixed">
+    <parent link="a_2070_01l_27Z"/>
+    <child link="hebi_x5_9_25Z"/>
+    <origin rpy="-1.57079632679 6.12323399574e-17 -3.14159265359" xyz="-3.1059696688e-17 0.0225 0.055"/>
+  </joint>
+  <joint name="Leg1/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_25Z"/>
+    <child link="a_2038_02_29Z"/>
+    <axis xyz="1.11022302463e-16 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-1.6" upper="0.7" velocity="100"/>
+    <origin rpy="6.16297582204e-33 -2.17024197421e-17 9.24446373306e-33" xyz="-4.26325641456e-17 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg1/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_29Z_to_tubepar_33Z" type="fixed">
+    <parent link="a_2038_02_29Z"/>
+    <child link="tubepar_33Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.26499954533e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_33Z_to_a_2039_02_30Z" type="fixed">
+    <parent link="tubepar_33Z"/>
+    <child link="a_2039_02_30Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+  </joint>
+  <joint name="a_2039_02_30Z_to_hebi_x5_4_31Z" type="fixed">
+    <parent link="a_2039_02_30Z"/>
+    <child link="hebi_x5_4_31Z"/>
+    <origin rpy="1.22464679915e-16 2.17024197421e-17 2.50240867501e-14" xyz="0.014 3.46987817078e-16 0.02"/>
+  </joint>
+  <joint name="Leg1/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_31Z"/>
+    <child link="a_2038_02_28Z"/>
+    <axis xyz="2.33146835171e-15 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="6.16297582204e-33 2.17024197421e-17 4.62223186653e-33" xyz="-4.4408920985e-17 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg1/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_28Z_to_tubepar_26Z" type="fixed">
+    <parent link="a_2038_02_28Z"/>
+    <child link="tubepar_26Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -7.67960412962e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_26Z_to_pp_2057_01_15Z" type="fixed">
+    <parent link="tubepar_26Z"/>
+    <child link="pp_2057_01_15Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 2.00193964556e-17" xyz="5.68434188608e-17 -0.254 1.08405451559e-17"/>
+  </joint>
+  <joint name="a_2095_01_6Z_to_tubepar_3Z" type="fixed">
+    <parent link="a_2095_01_6Z"/>
+    <child link="tubepar_3Z"/>
+    <origin rpy="-3.14159265359 -1.57079632679 0.0" xyz="1e-23 0.05 -0.001"/>
+  </joint>
+  <joint name="tubepar_3Z_to_a_2039_02_8Z" type="fixed">
+    <parent link="tubepar_3Z"/>
+    <child link="a_2039_02_8Z"/>
+    <origin rpy="-1.57079632679 -2.50240867501e-14 -1.57079632679" xyz="2.12765738259e-19 -0.076 -1.00000000003e-23"/>
+  </joint>
+  <joint name="a_2039_02_8Z_to_hebi_x5_4_72Z" type="fixed">
+    <parent link="a_2039_02_8Z"/>
+    <child link="hebi_x5_4_72Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.4901621895e-14" xyz="0.014 3.34009026003e-16 0.02"/>
+  </joint>
+  <joint name="Leg3/Hip/X5_4" type="revolute">
+    <parent link="hebi_x5_4_72Z"/>
+    <child link="a_2070_01l_67Z"/>
+    <axis xyz="-7.16406808574e-17 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-0.60" upper="0.60" velocity="100"/>
+    <origin rpy="0.0 8.89879155574e-17 3.14159265359" xyz="-5.89926392865e-17 -2.96636102637e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg3/Hip/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2070_01l_67Z_to_hebi_x5_9_65Z" type="fixed">
+    <parent link="a_2070_01l_67Z"/>
+    <child link="hebi_x5_9_65Z"/>
+    <origin rpy="-1.57079632679 6.12323399574e-17 -3.14159265359" xyz="-6.46501244623e-18 0.0225 0.055"/>
+  </joint>
+  <joint name="Leg3/Knee/X5_9" type="revolute">
+    <parent link="hebi_x5_9_65Z"/>
+    <child link="a_2038_02_69Z"/>
+    <axis xyz="-1.94105535953e-16 -2.27765793957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-1.6" upper="0.7" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-3.4244875509e-17 -6.83297381872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg3/Knee/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_69Z_to_tubepar_73Z" type="fixed">
+    <parent link="a_2038_02_69Z"/>
+    <child link="tubepar_73Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.67831784012e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_73Z_to_a_2039_02_70Z" type="fixed">
+    <parent link="tubepar_73Z"/>
+    <child link="a_2039_02_70Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="-3.79674216038e-19 -0.254 1.11468167354e-17"/>
+  </joint>
+  <joint name="a_2039_02_70Z_to_hebi_x5_4_71Z" type="fixed">
+    <parent link="a_2039_02_70Z"/>
+    <child link="hebi_x5_4_71Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.50240867501e-14" xyz="0.014 3.33205588742e-16 0.02"/>
+  </joint>
+  <joint name="Leg3/Ankle/X5_4" type="revolute">
+    <parent link="hebi_x5_4_71Z"/>
+    <child link="a_2038_02_68Z"/>
+    <axis xyz="1.55941619453e-16 -2.20826899957e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.8" upper="2.8" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-5.21651702772e-17 -6.62480699872e-18 0.03"/>
+  </joint>
+  <gazebo reference="Leg3/Ankle/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_68Z_to_tubepar_66Z" type="fixed">
+    <parent link="a_2038_02_68Z"/>
+    <child link="tubepar_66Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -3.54642118173e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_66Z_to_pp_2057_01_34Z" type="fixed">
+    <parent link="tubepar_66Z"/>
+    <child link="pp_2057_01_34Z"/>
+    <origin rpy="-1.57079632679 -1.57079632679 0.0" xyz="1.01843313174e-17 -0.254 3.06403797983e-18"/>
+  </joint>
+  <!--Gazebo Plugins-->
+  <gazebo>
+    <plugin filename="libhebiros_gazebo_plugin.so" name="hebiros_gazebo_plugin"/>
+  </gazebo>
+  <!--Links-->
+  <link name="base_link">
+    <!--Transformation from CyPhy2CAD global reference frame to base_link-->
+    <CyPhy2CAD>
+      <CADAssembly_metrics>
+        <RotationMatrix>
+          <Row>
+            <Column Value="1.0"/>
+            <Column Value="0.0"/>
+            <Column Value="0.0"/>
+          </Row>
+          <Row>
+            <Column Value="0.0"/>
+            <Column Value="1.0"/>
+            <Column Value="0.0"/>
+          </Row>
+          <Row>
+            <Column Value="0.0"/>
+            <Column Value="0.0"/>
+            <Column Value="1.0"/>
+          </Row>
+        </RotationMatrix>
+        <Translation X="1e-20" Y="1e-20" Z="1e-20"/>
+      </CADAssembly_metrics>
+    </CyPhy2CAD>
+  </link>
+  <link name="a_2038_02_22Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_22z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_22z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 0.0 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_22Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_21Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="3.88247770998e-17 1.07998184735e-33 -1.04030676747e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_21z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="3.88247770998e-17 1.07998184735e-33 -1.04030676747e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_21z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 1.07998184735e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_21Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_40Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -9.86076128129e-34 -2.47002510679e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_40z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -9.86076128129e-34 -2.47002510679e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_40z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -9.86076128129e-34 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_40Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_61Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.63332721308e-17 1.62240775448e-33 -1.61147482315e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_61z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.63332721308e-17 1.62240775448e-33 -1.61147482315e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_61z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 1.62240775448e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_61Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_50Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.3438699487e-17 -1.04850187705e-33 3.80778703786e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_50z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.3438699487e-17 -1.04850187705e-33 3.80778703786e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_50z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -1.04850187705e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_50Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_29Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="7.05441268433e-17 -1.39749490568e-33 8.49917415576e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_29z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="7.05441268433e-17 -1.39749490568e-33 8.49917415576e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_29z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -1.39749490568e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_29Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_69Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -2.4945794199e-33 9.4559004738e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_69z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -2.4945794199e-33 9.4559004738e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_69z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -2.4945794199e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_69Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_41Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -1.42108547152e-17 2.29426186673e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_41z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -1.42108547152e-17 2.29426186673e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_41z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -1.42108547152e-17 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_41Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_62Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="4.92278447745e-17 -1.99909840219e-33 2.84217094251e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_62z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="4.92278447745e-17 -1.99909840219e-33 2.84217094251e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_62z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -1.99909840219e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_62Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_49Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="7.76495541996e-17 4.50616912148e-35 2.08061353494e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_49z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="7.76495541996e-17 4.50616912148e-35 2.08061353494e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_49z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 4.50616912148e-35 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_49Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_28Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.3438699487e-17 6.61447948168e-34 3.80778703786e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_28z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.3438699487e-17 6.61447948168e-34 3.80778703786e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_28z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 6.61447948168e-34 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_28Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_68Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 2.4945794199e-33 -1.04419766019e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_68z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 2.4945794199e-33 -1.04419766019e-32"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2038_02_68z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 2.4945794199e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_68Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_19Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.4661628689e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_19z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.4661628689e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_19z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.4661628689e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_19Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_10Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 9.66902210287e-17 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 9.66902210287e-17 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 9.66902210287e-17 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_10Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_12Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.37895902752e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_12z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.37895902752e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_12z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.37895902752e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_12Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_7Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 8.42557231529e-17 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 8.42557231529e-17 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 8.42557231529e-17 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_7Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_13Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.21399361213e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_13z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.21399361213e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_13z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.21399361213e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_13Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_2Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.27616610151e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.27616610151e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.27616610151e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_2Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_8Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.47887903851e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.47887903851e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.47887903851e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_8Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_38Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.4704491327e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_38z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.4704491327e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_38z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.4704491327e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_38Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_59Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.4661628689e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_59z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.4661628689e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_59z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.4661628689e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_59Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_51Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.61198671793e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_51z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.61198671793e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_51z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.61198671793e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_51Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_30Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.61198671793e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_30z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.61198671793e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_30z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.61198671793e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_30Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_70Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.47416443457e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_70z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.47416443457e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2039_02_70z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.47416443457e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_70Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01l_48Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-7.05441268433e-17 8.49917415576e-18 -3.90396082516e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_48z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-7.05441268433e-17 8.49917415576e-18 -3.90396082516e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_48z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460051668411 0.020607421941 0.0299643349005"/>
+      <mass value="0.14516226357761153"/>
+      <inertia ixx="0.000161135299555" ixy="4.09000574012e-06" ixz="2.48161255339e-05" iyy="0.000165708676005" iyz="-2.36248220085e-05" izz="6.51133483297e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01l_48Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01l_27Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.92278447745e-17 2.84217094251e-17 -4.10146281435e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_27z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.92278447745e-17 2.84217094251e-17 -4.10146281435e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_27z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460051668411 0.020607421941 0.0299643349005"/>
+      <mass value="0.14516226357761153"/>
+      <inertia ixx="0.000161135299555" ixy="4.09000574012e-06" ixz="2.48161255339e-05" iyy="0.000165708676005" iyz="-2.36248220085e-05" izz="6.51133483297e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01l_27Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01l_67Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-2.84217094304e-17 1.72431352668e-17 -1.54887558465e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_67z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-2.84217094304e-17 1.72431352668e-17 -1.54887558465e-33"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01l_67z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460051668411 0.020607421941 0.0299643349005"/>
+      <mass value="0.14516226357761153"/>
+      <inertia ixx="0.000161135299555" ixy="4.09000574012e-06" ixz="2.48161255339e-05" iyy="0.000165708676005" iyz="-2.36248220085e-05" izz="6.51133483297e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01l_67Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01r_23Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-3.38969076134e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_23z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-3.38969076134e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_23z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460057918879 -0.0206238495531 0.0299643581747"/>
+      <mass value="0.14516218582936433"/>
+      <inertia ixx="0.000161168825159" ixy="-4.09770453244e-06" ixz="2.48157800091e-05" iyy="0.000165708674864" iyz="2.36665436106e-05" izz="6.51466854419e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01r_23Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01r_42Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.83270647395e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_42z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.83270647395e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_42z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460057918879 -0.0206238495531 0.0299643581747"/>
+      <mass value="0.14516218582936433"/>
+      <inertia ixx="0.000161168825159" ixy="-4.09770453244e-06" ixz="2.48157800091e-05" iyy="0.000165708674864" iyz="2.36665436106e-05" izz="6.51466854419e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01r_42Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2070_01r_63Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-8.36348991166e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_63z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-8.36348991166e-17 -0.0233888752 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2070_01r_63z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00460057918879 -0.0206238495531 0.0299643581747"/>
+      <mass value="0.14516218582936433"/>
+      <inertia ixx="0.000161168825159" ixy="-4.09770453244e-06" ixz="2.48157800091e-05" iyy="0.000165708674864" iyz="2.36665436106e-05" izz="6.51466854419e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2070_01r_63Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2095_01_6Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2095_01_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/a_2095_01_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 0.00602343578398"/>
+      <mass value="0.4495849869005886"/>
+      <inertia ixx="0.000761142683555" ixy="0.0" ixz="0.0" iyy="0.000761142070916" iyz="0.0" izz="0.00141066589678"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2095_01_6Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_p3d.so" name="position_3d_plugin">
+      <bodyName>a_2095_01_6Z</bodyName>
+      <topicName>hexapod/p3d</topicName>
+      <updateRate>100</updateRate>
+    </plugin>
+  </gazebo>
+
+  <link name="tubepar_17Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.26325641456e-17 -0.254 3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_17z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.26325641456e-17 -0.254 3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_17z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-4.26325641456e-17 -0.127 3.37030956224e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_17Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_20Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.42108547152e-17 -0.254 -3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_20z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.42108547152e-17 -0.254 -3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_20z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.42108547152e-17 -0.127 -3.37030956224e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_20Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_11Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.11022302463e-19 -1.77635683907e-18 -3.07674029841e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.11022302463e-19 -1.77635683907e-18 -3.07674029841e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.11022302463e-19 0.0635 -3.07674029841e-18"/>
+      <mass value="0.05136484214846103"/>
+      <inertia ixx="7.48470317633e-05" ixy="0.0" ixz="0.0" iyy="1.1616819302e-05" iyz="0.0" izz="7.48470440408e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_11Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_5Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="3.39907530978e-34 6.16297151796e-34 -5.55111124636e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="3.39907530978e-34 6.16297151796e-34 -5.55111124636e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.39907530978e-34 0.038 -5.55111124636e-18"/>
+      <mass value="0.030738015773882205"/>
+      <inertia ixx="1.8271137573e-05" ixy="0.0" ixz="0.0" iyy="6.95179737756e-06" iyz="0.0" izz="1.82711229896e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_5Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_1Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0635 0.0"/>
+      <mass value="0.05136484214846103"/>
+      <inertia ixx="7.48470317633e-05" ixy="0.0" ixz="0.0" iyy="1.1616819302e-05" iyz="0.0" izz="7.48470440408e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_1Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_9Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.127 2.27373675443e-16"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.127 2.27373675443e-16"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.0635 2.27373675443e-16"/>
+      <mass value="0.05136484214846103"/>
+      <inertia ixx="7.48470317633e-05" ixy="0.0" ixz="0.0" iyy="1.1616819302e-05" iyz="0.0" izz="7.48470440408e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_9Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_4Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.127 2.13162820728e-16"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.127 2.13162820728e-16"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.13495302842e-19 -0.0635 2.13162820728e-16"/>
+      <mass value="0.05136484214846103"/>
+      <inertia ixx="7.48470317633e-05" ixy="0.0" ixz="0.0" iyy="1.1616819302e-05" iyz="0.0" izz="7.48470440408e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_4Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_3Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="2.12765738259e-19 -0.076 -1.6123233996e-23"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="2.12765738259e-19 -0.076 -1.6123233996e-23"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.12765738259e-19 -0.038 -1.6123233996e-23"/>
+      <mass value="0.030738015773882205"/>
+      <inertia ixx="1.8271137573e-05" ixy="0.0" ixz="0.0" iyy="6.95179737756e-06" iyz="0.0" izz="1.82711229896e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_3Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_39Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-3.78956831697e-18 -0.254 4.4061976138e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_39z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-3.78956831697e-18 -0.254 4.4061976138e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_39z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-3.78956831697e-18 -0.127 4.4061976138e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_39Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_60Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.254 -3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_60z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 -0.254 -3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_60z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.127 -3.37030956224e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_60Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_54Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_54z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_54z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.127 3.37030955933e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_54Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_33Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_33z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 3.37030955933e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_33z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.127 3.37030955933e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_33Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_73Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-3.79674216038e-19 -0.254 1.11468167354e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_73z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-3.79674216038e-19 -0.254 1.11468167354e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_73z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-3.79674216038e-19 -0.127 1.11468167354e-17"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_73Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_36Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.48879806078e-18 -0.254 9.8046571014e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_36z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.48879806078e-18 -0.254 9.8046571014e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_36z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.48879806078e-18 -0.127 9.8046571014e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_36Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_57Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="2.84217094304e-17 -0.254 3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_57z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="2.84217094304e-17 -0.254 3.37030956224e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_57z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.84217094304e-17 -0.127 3.37030956224e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_57Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_47Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 1.08405451559e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_47z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.254 1.08405451559e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_47z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.42108547152e-17 -0.127 1.08405451559e-17"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_47Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_26Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -0.254 1.08405451559e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_26z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -0.254 1.08405451559e-17"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_26z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -0.127 1.08405451559e-17"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_26Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_66Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.01843313174e-17 -0.254 3.06403797983e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_66z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1.01843313174e-17 -0.254 3.06403797983e-18"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/tubepar_66z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.01843313174e-17 -0.127 3.06403797983e-18"/>
+      <mass value="0.10272968429692206"/>
+      <inertia ixx="0.000563925833033" ixy="0.0" ixz="0.0" iyy="2.3233638604e-05" iyz="0.0" izz="0.000563925857588"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_66Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_44Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -4.15585267242e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_44z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -4.15585267242e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_44z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.35842464949e-17 -4.15585267242e-17 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_44Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_45Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -9.84943491805e-18 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_45z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -9.84943491805e-18 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_45z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.33344463144e-17 -9.84943491805e-18 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_45Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_14Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -7.7529752722e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_14z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -7.7529752722e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_14z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.35842464949e-17 -7.7529752722e-17 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_14Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_55Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 8.10100951944e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_55z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 8.10100951944e-17 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_55z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.336220189e-17 8.10100951944e-17 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_55Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_15Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -2.09424248048e-16 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 -2.09424248048e-16 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.336220189e-17 -2.09424248048e-16 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_15Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="pp_2057_01_34Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 6.73194362611e-18 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_34z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.000134566925214 6.73194362611e-18 -0.00787993062438"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/pp_2057_01_34z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.31401572851e-17 6.73194362611e-18 0.0124571680804"/>
+      <mass value="0.04103919786635559"/>
+      <inertia ixx="1.36141748695e-05" ixy="0.0" ixz="0.0" iyy="1.36141791296e-05" iyz="0.0" izz="1.31126073334e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="pp_2057_01_34Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000</kp>
+    <kd>1</kd>
+    <minDepth>0.002</minDepth>
+    <maxVel>50</maxVel>
+  </gazebo>
+  <link name="hebi_x5_4_24Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.41788836017e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_24z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.41788836017e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_24z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_24Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg6/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg6/Ankle</topicName>
+        <bodyName>Leg6/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg6/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_16Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.37418169231e-17 -7.22427394722e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_16z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.37418169231e-17 -7.22427394722e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_16z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_16Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg6/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg6/Hip</topicName>
+        <bodyName>Leg6/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg6/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_35Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.60810588749e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_35z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.60810588749e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_35z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_35Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg4/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg4/Hip</topicName>
+        <bodyName>Leg4/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg4/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_56Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.37418169231e-17 3.913001285e-19 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_56z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.37418169231e-17 3.913001285e-19 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_56z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_56Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg2/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg2/Hip</topicName>
+        <bodyName>Leg2/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg2/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_53Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.28233318239e-17 3.913001285e-19 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_53z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.28233318239e-17 3.913001285e-19 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_53z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_53Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg5/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg5/Hip</topicName>
+        <bodyName>Leg5/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg5/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_32Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="6.28233318239e-17 -7.22427394722e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_32z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="6.28233318239e-17 -7.22427394722e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_32z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_32Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg1/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg1/Hip</topicName>
+        <bodyName>Leg1/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg1/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_72Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.79180290737e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_72z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.79180290737e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_72z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_72Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg3/Hip/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg3/Hip</topicName>
+        <bodyName>Leg3/Hip/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg3/Hip/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_43Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-6.35175151563e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_43z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-6.35175151563e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_43z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_43Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg4/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg4/Ankle</topicName>
+        <bodyName>Leg4/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg4/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_64Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.95079541199e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_64z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.95079541199e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_64z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_64Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg2/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg2/Ankle</topicName>
+        <bodyName>Leg2/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg2/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_52Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.32338584535e-16 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_52z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.32338584535e-16 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_52z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_52Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg5/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg5/Ankle</topicName>
+        <bodyName>Leg5/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg5/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_31Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.70734562441e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_31z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.70734562441e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_31z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_31Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg1/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg1/Ankle</topicName>
+        <bodyName>Leg1/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg1/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_71Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.4504294569e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_71z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.4504294569e-17 -3.31240349936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_4_71z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_71Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg3/Ankle/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg3/Ankle</topicName>
+        <bodyName>Leg3/Ankle/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg3/Ankle/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_18Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.15143483426e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_18z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.15143483426e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_18z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_18Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg6/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg6/Knee</topicName>
+        <bodyName>Leg6/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg6/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_37Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-7.91634907433e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_37z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-7.91634907433e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_37z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_37Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg4/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg4/Knee</topicName>
+        <bodyName>Leg4/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg4/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_58Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.26325641456e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_58z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.26325641456e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_58z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_58Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg2/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg2/Knee</topicName>
+        <bodyName>Leg2/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg2/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_46Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.95399252334e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_46z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.95399252334e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_46z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_46Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg5/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg5/Knee</topicName>
+        <bodyName>Leg5/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg5/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_25Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-4.08562073062e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_25z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-4.08562073062e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_25z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_25Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg1/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg1/Knee</topicName>
+        <bodyName>Leg1/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg1/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_65Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-3.13332924697e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_65z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-3.13332924697e-17 -3.41648690936e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebihexapod_description/meshes/hebi_x5_9_65z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_65Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="Leg3/Knee/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/Leg3/Knee</topicName>
+        <bodyName>Leg3/Knee/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>Leg3/Knee/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+</robot>

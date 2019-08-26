@@ -1,0 +1,26 @@
+<launch>
+
+  <!-- Load URDF onto Parameter server, start Gazebo, spawn URDF in Gazebo -->
+  <include file="$(find hebihexapod_gazebo)/launch/spawn_urdf_in_gazebo.launch" />
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros_gazebo.launch" />
+
+  <!-- Start run_hebi_hexapod -->
+  <node name="run_hebi_hexapod" pkg="hebihexapod_description" type="run_hebi_hexapod.py"
+        output="screen" launch-prefix="xterm -e" />
+
+  <!-- Start keyboard listener -->
+  <node name="key_publisher" pkg="drivebot_description" type="key_publisher.py"
+        output="screen" launch-prefix="xterm -e" />
+
+  <!-- Start keystroke-to-Twist publisher -->
+  <node name="keystroke_to_cmd_vel" pkg="hebihexapod_description" type="keystroke_to_cmd_vel.py"
+        output="screen" launch-prefix="xterm -e" >
+        <remap from="cmd_vel" to="/hexapod/cmd_vel">
+        </remap>
+  </node>
+
+  <!-- launch-prefix="xterm -e" -->
+
+</launch>

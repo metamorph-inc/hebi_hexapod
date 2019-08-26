@@ -1,0 +1,115 @@
+<launch>
+
+  <!-- Load URDF onto Parameter server, start Gazebo, spawn URDF in Gazebo -->
+  <include file="$(find hebihexapod_gazebo)/launch/spawn_urdf_in_gazebo.launch" />
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros_gazebo.launch" />
+
+  <!-- Start keyboard listener -->
+  <node name="key_publisher" pkg="drivebot_description" type="key_publisher.py"
+        output="screen" launch-prefix="xterm -e" />
+
+  <!-- Start keystroke-to-Twist publisher -->
+  <node name="keystroke_to_cmd_vel" pkg="hebihexapod_description" type="keystroke_to_cmd_vel.py"
+        output="screen" launch-prefix="xterm -e" >
+        <remap from="cmd_vel" to="/hexapod/cmd_vel">
+        </remap>
+  </node>
+
+  <!-- Start hexapod_move_base_fsm_node -->
+  <node name="hexapod_move_base_creep_gait_fsm_node" pkg="hebihexapod_description" type="hexapod_move_base_creep_gait_fsm_node.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-base_link_name base_link
+              -to_leg_1_topic move_base_to_leg1
+              -from_leg_1_topic leg1_to_move_base
+              -leg_1_base_link_name a_2039_02_2Z
+              -to_leg_2_topic move_base_to_leg2
+              -from_leg_2_topic leg2_to_move_base
+              -leg_2_base_link_name a_2039_02_7Z
+              -to_leg_3_topic move_base_to_leg3
+              -from_leg_3_topic leg3_to_move_base
+              -leg_3_base_link_name a_2039_02_8Z
+              -to_leg_4_topic move_base_to_leg4
+              -from_leg_4_topic leg4_to_move_base
+              -leg_4_base_link_name a_2039_02_12Z
+              -to_leg_5_topic move_base_to_leg5
+              -from_leg_5_topic leg5_to_move_base
+              -leg_5_base_link_name a_2039_02_13Z
+              -to_leg_6_topic move_base_to_leg6
+              -from_leg_6_topic leg6_to_move_base
+              -leg_6_base_link_name a_2039_02_10Z
+              -from_cmd_vel_twist_topic hexapod/cmd_vel"/>
+
+  <!-- Start hexapod_leg_fsm_nodes -->
+  <node name="hexapod_leg_fsm_node_1" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group_name leg1
+              -hebi_mapping_hip Leg1/Hip
+              -hebi_mapping_knee Leg1/Knee
+              -hebi_mapping_ankle Leg1/Ankle
+              -base_link_name a_2039_02_2Z
+              -end_link_name pp_2057_01_15Z
+              -from_master_topic move_base_to_leg1
+              -to_master_topic leg1_to_move_base"/>
+
+  <node name="hexapod_leg_fsm_node_2" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+      output="screen" launch-prefix="xterm -e"
+      args="-hebi_group_name leg2
+            -hebi_mapping_hip Leg2/Hip
+            -hebi_mapping_knee Leg2/Knee
+            -hebi_mapping_ankle Leg2/Ankle
+            -base_link_name a_2039_02_7Z
+            -end_link_name pp_2057_01_14Z
+            -from_master_topic move_base_to_leg2
+            -to_master_topic leg2_to_move_base"/>
+
+  <node name="hexapod_leg_fsm_node_3" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+      output="screen" launch-prefix="xterm -e"
+      args="-hebi_group_name leg3
+            -hebi_mapping_hip Leg3/Hip
+            -hebi_mapping_knee Leg3/Knee
+            -hebi_mapping_ankle Leg3/Ankle
+            -base_link_name a_2039_02_8Z
+            -end_link_name pp_2057_01_34Z
+            -from_master_topic move_base_to_leg3
+            -to_master_topic leg3_to_move_base"/>
+
+  <node name="hexapod_leg_fsm_node_4" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+      output="screen" launch-prefix="xterm -e"
+      args="-hebi_group_name leg4
+            -hebi_mapping_hip Leg4/Hip
+            -hebi_mapping_knee Leg4/Knee
+            -hebi_mapping_ankle Leg4/Ankle
+            -base_link_name a_2039_02_12Z
+            -end_link_name pp_2057_01_45Z
+            -from_master_topic move_base_to_leg4
+            -to_master_topic leg4_to_move_base"/>
+
+  <node name="hexapod_leg_fsm_node_5" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+      output="screen" launch-prefix="xterm -e"
+      args="-hebi_group_name leg5
+            -hebi_mapping_hip Leg5/Hip
+            -hebi_mapping_knee Leg5/Knee
+            -hebi_mapping_ankle Leg5/Ankle
+            -base_link_name a_2039_02_13Z
+            -end_link_name pp_2057_01_55Z
+            -from_master_topic move_base_to_leg5
+            -to_master_topic leg5_to_move_base"/>
+
+  <node name="hexapod_leg_fsm_node_6" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+      output="screen" launch-prefix="xterm -e"
+      args="-hebi_group_name leg6
+            -hebi_mapping_hip Leg6/Hip
+            -hebi_mapping_knee Leg6/Knee
+            -hebi_mapping_ankle Leg6/Ankle
+            -base_link_name a_2039_02_10Z
+            -end_link_name pp_2057_01_44Z
+            -from_master_topic move_base_to_leg6
+            -to_master_topic leg6_to_move_base"/>
+
+  <!-- launch-prefix="xterm -e" -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+</launch>

@@ -1,0 +1,2328 @@
+<?xml version="1.0"?>
+<robot name="hebihexapod_01_b_boilerplate_motor_plugins">
+
+  <!--
+    Leg Numbering / Chassis Coordinate convention:
+    This should match ROS wheeled vehicle convention
+
+     1 -   - 2            +x         (front)
+         |                 ^            ^
+     3 ----- 4             |            |
+         |           +y <--o
+     5 -   - 6               +z
+  -->
+
+  <!--
+    We can add meshes later.
+    Don't spend too much time.
+    That's what the .urdf generator will do.
+  -->
+
+  <!-- chassis -->
+  <link name="A_2095_2096_chassis_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.0375" radius="0.0685"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0375" radius="0.0685"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.66"/>
+      <inertia ixx="0.000852" iyy="0.000852" izz="0.001548"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </inertial>
+  </link>
+  <!-- 1 -->
+  <joint name="A_2095_2096_chassis_to_5_IN_OD_CF_TUBE_chassis1_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="5_IN_OD_CF_TUBE_chassis1_link"/>
+    <origin rpy="-0.523599 1.5708 0.0" xyz="0.05932 0.03425 0.0"/>
+  </joint>
+  <link name="5_IN_OD_CF_TUBE_chassis1_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="4.3e-05" iyy="4.3e-05" izz="7e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </inertial>
+  </link>
+  <joint name="5_IN_OD_CF_TUBE_chassis1_to_A_2039_2091_chassis1_joint" type="fixed">
+    <parent link="5_IN_OD_CF_TUBE_chassis1_link"/>
+    <child link="A_2039_2091_chassis1_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.104"/>
+  </joint>
+  <link name="A_2039_2091_chassis1_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- 2 -->
+  <joint name="A_2095_2096_chassis_to_5_IN_OD_CF_TUBE_chassis2_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="5_IN_OD_CF_TUBE_chassis2_link"/>
+    <origin rpy="0.523599 1.5708 0.0" xyz="0.05932 -0.03425 0.0"/>
+  </joint>
+  <link name="5_IN_OD_CF_TUBE_chassis2_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="4.3e-05" iyy="4.3e-05" izz="7e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </inertial>
+  </link>
+  <joint name="5_IN_OD_CF_TUBE_chassis2_to_A_2039_2091_chassis2_joint" type="fixed">
+    <parent link="5_IN_OD_CF_TUBE_chassis2_link"/>
+    <child link="A_2039_2091_chassis2_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.104"/>
+  </joint>
+  <link name="A_2039_2091_chassis2_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- 3 -->
+  <joint name="A_2095_2096_chassis_to_3_IN_OD_CF_TUBE_chassis3_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="3_IN_OD_CF_TUBE_chassis3_link"/>
+    <origin rpy="-1.5708 1.5708 0.0" xyz="0 0.0685 0"/>
+  </joint>
+  <link name="3_IN_OD_CF_TUBE_chassis3_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.076" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.076" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="1.1e-05" iyy="1.1e-05" izz="4e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </inertial>
+  </link>
+  <joint name="3_IN_OD_CF_TUBE_chassis3_to_A_2039_2091_chassis3_joint" type="fixed">
+    <parent link="3_IN_OD_CF_TUBE_chassis3_link"/>
+    <child link="A_2039_2091_chassis3_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.053"/>
+  </joint>
+  <link name="A_2039_2091_chassis3_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- 4 -->
+  <joint name="A_2095_2096_chassis_to_3_IN_OD_CF_TUBE_chassis4_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="3_IN_OD_CF_TUBE_chassis4_link"/>
+    <origin rpy="1.5708 1.5708 0.0" xyz="0 -0.0685 0"/>
+  </joint>
+  <link name="3_IN_OD_CF_TUBE_chassis4_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.076" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.076" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="1.1e-05" iyy="1.1e-05" izz="4e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+    </inertial>
+  </link>
+  <joint name="3_IN_OD_CF_TUBE_chassis4_to_A_2039_2091_chassis4_joint" type="fixed">
+    <parent link="3_IN_OD_CF_TUBE_chassis4_link"/>
+    <child link="A_2039_2091_chassis4_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.053"/>
+  </joint>
+  <link name="A_2039_2091_chassis4_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- 5 -->
+  <joint name="A_2095_2096_chassis_to_5_IN_OD_CF_TUBE_chassis5_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="5_IN_OD_CF_TUBE_chassis5_link"/>
+    <origin rpy="0 1.5708 2.61799" xyz="-0.05932 0.03425 0.0"/>
+  </joint>
+  <link name="5_IN_OD_CF_TUBE_chassis5_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="4.3e-05" iyy="4.3e-05" izz="7e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </inertial>
+  </link>
+  <joint name="5_IN_OD_CF_TUBE_chassis5_to_A_2039_2091_chassis5_joint" type="fixed">
+    <parent link="5_IN_OD_CF_TUBE_chassis5_link"/>
+    <child link="A_2039_2091_chassis5_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.104"/>
+  </joint>
+  <link name="A_2039_2091_chassis5_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- 6 -->
+  <joint name="A_2095_2096_chassis_to_5_IN_OD_CF_TUBE_chassis6_joint" type="fixed">
+    <parent link="A_2095_2096_chassis_link"/>
+    <child link="5_IN_OD_CF_TUBE_chassis6_link"/>
+    <origin rpy="0 1.5708 -2.61799" xyz="-0.05932 -0.03425 0.0"/>
+  </joint>
+  <link name="5_IN_OD_CF_TUBE_chassis6_link" type="fixed">
+    <visual>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.127" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </collision>
+    <inertial>
+      <mass value="0.0296"/>
+      <inertia ixx="4.3e-05" iyy="4.3e-05" izz="7e-06"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0405"/>
+    </inertial>
+  </link>
+  <joint name="5_IN_OD_CF_TUBE_chassis6_to_A_2039_2091_chassis6_joint" type="fixed">
+    <parent link="5_IN_OD_CF_TUBE_chassis6_link"/>
+    <child link="A_2039_2091_chassis6_link"/>
+    <origin rpy="0 -1.5708 0" xyz="0 0 0.104"/>
+  </joint>
+  <link name="A_2039_2091_chassis6_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.01125 0 0"/>
+    </inertial>
+  </link>
+  <!-- end chassis -->
+
+  <!-- leg 1 -->
+  <joint name="A_2039_2091_chassis1_link_to_HEBI_X5_4_hip_leg1_joint" type="fixed">
+    <parent link="A_2039_2091_chassis1_link"/>
+    <child link="HEBI_X5_4_hip_leg1_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg1_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg1_to_HEBI_X5_9_knee_leg1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg1_link"/>
+    <child link="HEBI_X5_9_knee_leg1_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg1_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg1_to_A_2038_2090_leg1_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg1_link"/>
+    <child link="A_2038_2090_leg1_1_link"/>
+    <origin rpy="-1.5708 0 0" xyz="0 0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg1_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg1_1_to_10_IN_OD_CF_TUBE_leg1_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg1_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg1_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg1_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg1_1_to_A_2039_2091_leg1_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg1_1_link"/>
+    <child link="A_2039_2091_leg1_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg1_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg1_to_HEBI_X5_9_ankle_leg1_joint" type="fixed">
+    <parent link="A_2039_2091_leg1_link"/>
+    <child link="HEBI_X5_9_ankle_leg1_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg1_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg1_to_A_2038_2090_leg1_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg1_link"/>
+    <child link="A_2038_2090_leg1_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg1_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg1_2_to_10_IN_OD_CF_TUBE_leg1_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg1_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg1_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg1_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 1 -->
+
+  <!-- TODO: repeat... -->
+
+  <!-- leg 2 -->
+  <joint name="A_2039_2091_chassis2_link_to_HEBI_X5_4_hip_leg2_joint" type="fixed">
+    <parent link="A_2039_2091_chassis2_link"/>
+    <child link="HEBI_X5_4_hip_leg2_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg2_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg2_to_HEBI_X5_9_knee_leg2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg2_link"/>
+    <child link="HEBI_X5_9_knee_leg2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg2_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg2_to_A_2038_2090_leg2_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg2_link"/>
+    <child link="A_2038_2090_leg2_1_link"/>
+    <origin rpy="1.5708 0 0" xyz="0 -0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg2_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg2_1_to_10_IN_OD_CF_TUBE_leg2_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg2_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg2_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg2_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg2_1_to_A_2039_2091_leg2_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg2_1_link"/>
+    <child link="A_2039_2091_leg2_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg2_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg2_to_HEBI_X5_9_ankle_leg2_joint" type="fixed">
+    <parent link="A_2039_2091_leg2_link"/>
+    <child link="HEBI_X5_9_ankle_leg2_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg2_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg2_to_A_2038_2090_leg2_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg2_link"/>
+    <child link="A_2038_2090_leg2_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg2_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg2_2_to_10_IN_OD_CF_TUBE_leg2_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg2_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg2_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg2_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 2 -->
+
+  <!-- leg 3 -->
+  <joint name="A_2039_2091_chassis3_link_to_HEBI_X5_4_hip_leg3_joint" type="fixed">
+    <parent link="A_2039_2091_chassis3_link"/>
+    <child link="HEBI_X5_4_hip_leg3_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg3_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg3_to_HEBI_X5_9_knee_leg3_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg3_link"/>
+    <child link="HEBI_X5_9_knee_leg3_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg3_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg3_to_A_2038_2090_leg3_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg3_link"/>
+    <child link="A_2038_2090_leg3_1_link"/>
+    <origin rpy="-1.5708 0 0" xyz="0 0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg3_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg3_1_to_10_IN_OD_CF_TUBE_leg3_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg3_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg3_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg3_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg3_1_to_A_2039_2091_leg3_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg3_1_link"/>
+    <child link="A_2039_2091_leg3_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg3_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg3_to_HEBI_X5_9_ankle_leg3_joint" type="fixed">
+    <parent link="A_2039_2091_leg3_link"/>
+    <child link="HEBI_X5_9_ankle_leg3_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg3_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg3_to_A_2038_2090_leg3_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg3_link"/>
+    <child link="A_2038_2090_leg3_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg3_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg3_2_to_10_IN_OD_CF_TUBE_leg3_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg3_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg3_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg3_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 3 -->
+
+  <!-- leg 4 -->
+  <joint name="A_2039_2091_chassis4_link_to_HEBI_X5_4_hip_leg4_joint" type="fixed">
+    <parent link="A_2039_2091_chassis4_link"/>
+    <child link="HEBI_X5_4_hip_leg4_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg4_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg4_to_HEBI_X5_9_knee_leg4_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg4_link"/>
+    <child link="HEBI_X5_9_knee_leg4_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg4_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg4_to_A_2038_2090_leg4_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg4_link"/>
+    <child link="A_2038_2090_leg4_1_link"/>
+    <origin rpy="1.5708 0 0" xyz="0 -0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg4_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg4_1_to_10_IN_OD_CF_TUBE_leg4_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg4_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg4_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg4_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg4_1_to_A_2039_2091_leg4_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg4_1_link"/>
+    <child link="A_2039_2091_leg4_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg4_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg4_to_HEBI_X5_9_ankle_leg4_joint" type="fixed">
+    <parent link="A_2039_2091_leg4_link"/>
+    <child link="HEBI_X5_9_ankle_leg4_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg4_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg4_to_A_2038_2090_leg4_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg4_link"/>
+    <child link="A_2038_2090_leg4_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg4_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg4_2_to_10_IN_OD_CF_TUBE_leg4_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg4_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg4_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg4_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 4 -->
+
+  <!-- leg 5 -->
+  <joint name="A_2039_2091_chassis5_link_to_HEBI_X5_4_hip_leg5_joint" type="fixed">
+    <parent link="A_2039_2091_chassis5_link"/>
+    <child link="HEBI_X5_4_hip_leg5_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg5_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg5_to_HEBI_X5_9_knee_leg5_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg5_link"/>
+    <child link="HEBI_X5_9_knee_leg5_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg5_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="-1.5708 0 0" xyz="-0.019 -0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg5_to_A_2038_2090_leg5_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg5_link"/>
+    <child link="A_2038_2090_leg5_1_link"/>
+    <origin rpy="-1.5708 0 0" xyz="0 0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg5_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg5_1_to_10_IN_OD_CF_TUBE_leg5_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg5_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg5_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg5_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg5_1_to_A_2039_2091_leg5_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg5_1_link"/>
+    <child link="A_2039_2091_leg5_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg5_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg5_to_HEBI_X5_9_ankle_leg5_joint" type="fixed">
+    <parent link="A_2039_2091_leg5_link"/>
+    <child link="HEBI_X5_9_ankle_leg5_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg5_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg5_to_A_2038_2090_leg5_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg5_link"/>
+    <child link="A_2038_2090_leg5_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg5_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg5_2_to_10_IN_OD_CF_TUBE_leg5_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg5_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg5_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg5_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 5 -->
+
+  <!-- leg 6 -->
+  <joint name="A_2039_2091_chassis6_link_to_HEBI_X5_4_hip_leg6_joint" type="fixed">
+    <parent link="A_2039_2091_chassis6_link"/>
+    <child link="HEBI_X5_4_hip_leg6_link"/>
+    <origin rpy="0 0 0" xyz="0.013 0 0.01875"/>
+  </joint>
+  <link name="HEBI_X5_4_hip_leg6_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.335"/>
+      <inertia ixx="0.000365" iyy="0.000487" izz="5.4e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_4_hip_leg6_to_HEBI_X5_9_knee_leg6_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_4_hip_leg6_link"/>
+    <child link="HEBI_X5_9_knee_leg6_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.032"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="HEBI_X5_9_knee_leg6_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="1.5708 0 0" xyz="-0.019 0.00685 0.055"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_knee_leg6_to_A_2038_2090_leg6_1_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_knee_leg6_link"/>
+    <child link="A_2038_2090_leg6_1_link"/>
+    <origin rpy="1.5708 0 0" xyz="0 -0.00925 0.055"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg6_1_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg6_1_to_10_IN_OD_CF_TUBE_leg6_1_joint" type="fixed">
+    <parent link="A_2038_2090_leg6_1_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg6_1_link"/>
+    <origin rpy="1.5708 0 1.5708" xyz="0.012 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg6_1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <joint name="10_IN_OD_CF_TUBE_leg6_1_to_A_2039_2091_leg6_joint" type="fixed">
+    <parent link="10_IN_OD_CF_TUBE_leg6_1_link"/>
+    <child link="A_2039_2091_leg6_link"/>
+    <origin rpy="-1.5708 1.5708 0" xyz="0 0 0.254"/>
+  </joint>
+  <link name="A_2039_2091_leg6_link">
+    <visual>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0685 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </collision>
+    <inertial>
+      <mass value="0.11"/>
+      <inertia ixx="5.6e-05" iyy="6.4e-05" izz="2.6e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.01125 0 -0.00125"/>
+    </inertial>
+  </link>
+  <joint name="A_2039_2091_leg6_to_HEBI_X5_9_ankle_leg6_joint" type="fixed">
+    <parent link="A_2039_2091_leg6_link"/>
+    <child link="HEBI_X5_9_ankle_leg6_link"/>
+    <origin rpy="0 -3.14159 0" xyz="-0.013 0 -0.02"/>
+  </joint>
+  <link name="HEBI_X5_9_ankle_leg6_link">
+    <visual>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.11 0.073 0.031"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </collision>
+    <inertial>
+      <mass value="0.36"/>
+      <inertia ixx="0.000392" iyy="0.000523" izz="5.8e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="-0.019 0 0.0155"/>
+    </inertial>
+  </link>
+  <joint name="HEBI_X5_9_ankle_leg6_to_A_2038_2090_leg6_2_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="HEBI_X5_9_ankle_leg6_link"/>
+    <child link="A_2038_2090_leg6_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <dynamics friction="0.015" damping="0.3"/>  <!-- Based on simple drop test in Gazebo -->
+    <limit upper="2.96706" lower="-2.96706" effort="100.0" velocity="100.0"/>
+  </joint>
+  <link name="A_2038_2090_leg6_2_link">
+    <visual>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.0595 0.048 0.0375"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="4.1e-05" iyy="4.9e-05" izz="2.3e-05"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0.00575 0 0.01875"/>
+    </inertial>
+  </link>
+  <joint name="A_2038_2090_leg6_2_to_10_IN_OD_CF_TUBE_leg6_2_joint" type="fixed">
+    <parent link="A_2038_2090_leg6_2_link"/>
+    <child link="10_IN_OD_CF_TUBE_leg6_2_link"/>
+    <origin rpy="-1.5708 0 -1.5708" xyz="0 0 0.02"/>
+  </joint>
+  <link name="10_IN_OD_CF_TUBE_leg6_2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.254" radius="0.015875"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </collision>
+    <inertial>
+      <mass value="0.0592"/>
+      <inertia ixx="0.000694" iyy="0.000694" izz="0.000752"
+               ixy="0" ixz="0" iyz="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.129"/>
+    </inertial>
+  </link>
+  <!-- end leg 6 -->
+
+
+  <!-- Gazebo definitions - only used in Gazebo simulator -->
+
+  <!-- chassis -->
+  <gazebo reference="A_2095_2096_chassis_link">
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 1 -->
+  <gazebo reference="5_IN_OD_CF_TUBE_chassis1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 2 -->
+  <gazebo reference="5_IN_OD_CF_TUBE_chassis2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 3 -->
+  <gazebo reference="3_IN_OD_CF_TUBE_chassis3_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis3_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 4 -->
+  <gazebo reference="3_IN_OD_CF_TUBE_chassis4_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis4_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 5 -->
+  <gazebo reference="5_IN_OD_CF_TUBE_chassis5_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis5_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- 6 -->
+  <gazebo reference="5_IN_OD_CF_TUBE_chassis6_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_chassis6_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <!-- end chassis -->
+
+  <!-- leg 1 -->
+  <gazebo reference="HEBI_X5_4_hip_leg1_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg1_to_HEBI_X5_9_knee_leg1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg1_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg1_to_A_2038_2090_leg1_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg1_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg1_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg1_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg1_to_A_2038_2090_leg1_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg1_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg1_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 1 -->
+
+  <!-- leg 2 -->
+  <gazebo reference="HEBI_X5_4_hip_leg2_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg2_to_HEBI_X5_9_knee_leg2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg2_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg2_to_A_2038_2090_leg2_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg2_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg2_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg2_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg2_to_A_2038_2090_leg2_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg2_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg2_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 2 -->
+
+  <!-- leg 3 -->
+  <gazebo reference="HEBI_X5_4_hip_leg3_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg3_to_HEBI_X5_9_knee_leg3_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg3_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg3_to_A_2038_2090_leg3_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg3_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg3_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg3_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg3_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg3_to_A_2038_2090_leg3_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg3_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg3_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 3 -->
+
+  <!-- leg 4 -->
+  <gazebo reference="HEBI_X5_4_hip_leg4_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg4_to_HEBI_X5_9_knee_leg4_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg4_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg4_to_A_2038_2090_leg4_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg4_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg4_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg4_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg4_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg4_to_A_2038_2090_leg4_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg4_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg4_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 4 -->
+
+  <!-- leg 5 -->
+  <gazebo reference="HEBI_X5_4_hip_leg5_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg5_to_HEBI_X5_9_knee_leg5_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg5_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg5_to_A_2038_2090_leg5_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg5_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg5_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg5_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg5_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg5_to_A_2038_2090_leg5_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg5_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg5_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 5 -->
+
+  <!-- leg 6 -->
+  <gazebo reference="HEBI_X5_4_hip_leg6_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_4_hip_leg6_to_HEBI_X5_9_knee_leg6_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg6_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_knee_leg6_to_A_2038_2090_leg6_1_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg6_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg6_1_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="A_2039_2091_leg6_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg6_link">
+    <material>Gazebo/Red</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="HEBI_X5_9_ankle_leg6_to_A_2038_2090_leg6_2_joint">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="A_2038_2090_leg6_2_link">
+    <material>Gazebo/Black</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="10_IN_OD_CF_TUBE_leg6_2_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>True</selfCollide>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <maxVel>0.5</maxVel>        <!-- Tune for ground contact -->
+    <minDepth>0.002</minDepth>  <!-- Tune for ground contact -->
+  </gazebo>
+  <!-- end leg 6 -->
+
+  <!-- Gazebo plugins -->
+  <!-- leg 1 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg1_to_HEBI_X5_9_knee_leg1_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg1_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg1</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg1_to_A_2038_2090_leg1_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg1_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg1</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg1_to_A_2038_2090_leg1_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg1_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg1</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 1 -->
+  <!-- leg 2 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg2_to_HEBI_X5_9_knee_leg2_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg2_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg2</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg2_to_A_2038_2090_leg2_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg2_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg2</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg2_to_A_2038_2090_leg2_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg2_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg2</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 2 -->
+  <!-- leg 3 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg3_to_HEBI_X5_9_knee_leg3_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg3_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg3</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg3_to_A_2038_2090_leg3_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg3_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg3</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg3_to_A_2038_2090_leg3_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg3_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg3</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 3 -->
+  <!-- leg 4 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg4_to_HEBI_X5_9_knee_leg4_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg4_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg4</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg4_to_A_2038_2090_leg4_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg4_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg4</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg4_to_A_2038_2090_leg4_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg4_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg4</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 4 -->
+  <!-- leg 5 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg5_to_HEBI_X5_9_knee_leg5_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg5_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg5</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg5_to_A_2038_2090_leg5_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg5_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg5</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg5_to_A_2038_2090_leg5_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg5_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg5</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 5 -->
+  <!-- leg 6 -->
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_4_hip_leg6_to_HEBI_X5_9_knee_leg6_joint</actuatorJoint>
+      <maxTorque>7.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg6_to_hip</cmdPosTopic>
+      <anglePosTopic>hip_to_leg6</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_knee_leg6_to_A_2038_2090_leg6_1_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg6_to_knee</cmdPosTopic>
+      <anglePosTopic>knee_to_leg6</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>HEBI_X5_9_ankle_leg6_to_A_2038_2090_leg6_2_joint</actuatorJoint>
+      <maxTorque>13.0</maxTorque>
+      <posPidPGain>5.0</posPidPGain>
+      <posPidIGain>0.0</posPidIGain>
+      <posPidDGain>0.01</posPidDGain>
+      <posPidIMax>0.0</posPidIMax>
+      <posPidIMin>-0.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>leg6_to_ankle</cmdPosTopic>
+      <anglePosTopic>ankle_to_leg6</anglePosTopic>
+    </plugin>
+  </gazebo>
+  <!-- end leg 6 -->
+</robot>

@@ -1,0 +1,4 @@
+<launch>
+  <!-- Load the URDF model only the parameter server -->
+  <param name="robot_description" textfile="$(find hebihexapod_description)/urdf/openmeta_generated_hexapod.urdf"/>
+</launch>

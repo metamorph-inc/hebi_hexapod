@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- Load URDF onto Parameter server, start Gazebo, spawn URDF in Gazebo -->
+  <include file="$(find hebihexapod_gazebo)/launch/spawn_urdf_in_gazebo.launch" />
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros_gazebo.launch" />
+
+  <!-- Start hexapod_leg_fsm_node -->
+  <node name="hexapod_leg_fsm_node_1" pkg="hebihexapod_description" type="hexapod_leg_fsm_node.py"
+        output="screen"
+        args="-hebi_group_name leg_1
+              -hebi_mapping_hip Leg1/Hip
+              -hebi_mapping_knee Leg1/Knee
+              -hebi_mapping_ankle Leg1/Ankle
+              -base_link_name a_2039_02_2Z
+              -end_link_name pp_2057_01_15Z
+              -from_master_topic from_master
+              -to_master_topic to_master"/>
+
+
+  <!-- launch-prefix="xterm -e" -->
+
+</launch>
