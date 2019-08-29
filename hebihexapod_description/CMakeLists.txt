@@ -9,19 +9,9 @@ project(hebihexapod_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
-  rospy
-  actionlib
   std_msgs
   geometry_msgs
   sensor_msgs
-  smach
-  smach_ros
-  hebiros
-  hebiros_gazebo_plugin
-  hebiros_utils
-  urdf_parser_py
-  trak_ik_python
-  pykdl_utils
 )
 
 ## Generate messages in the 'msg' folder

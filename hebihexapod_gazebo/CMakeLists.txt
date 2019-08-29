@@ -8,14 +8,7 @@ add_compile_options(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_plugins
-  gazebo_ros
-  drivebot_description
   roscpp
-  rospy
-  sensor_msgs
-  smach_viewer
-  std_msgs
   geometry_msgs
 )
 
@@ -119,13 +112,7 @@ catkin_package(
 #  LIBRARIES hebihexapod_gazebo
 
   CATKIN_DEPENDS
-  gazebo_plugins
-  gazebo_ros
   roscpp
-  rospy
-  sensor_msgs
-  smach_viewer
-  std_msgs
   geometry_msgs
 #  DEPENDS system_lib
 )
