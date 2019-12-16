@@ -13,6 +13,7 @@ from hebiros_utils.hebiros_wrapper import HebirosWrapper
 from hexapod_leg_states.wait_for_master import WaitForMaster
 from hexapod_leg_states.step import Step
 from hexapod_leg_states.push import Push
+from hexapod_leg_states.move_to_joint_state import MoveToJointState
 
 
 def parse_args(args):
@@ -89,6 +90,7 @@ def main():
     wait_for_master = WaitForMaster(hebiros_wrapper=hebi_wrap, from_master_topic=from_master_topic, to_master_topic=to_master_topic)
     step = Step(hebiros_wrapper=hebi_wrap, urdf_str=urdf_str, base_link=base_link_name, end_link=end_link_name, step_height=step_height)
     push = Push(hebiros_wrapper=hebi_wrap, urdf_str=urdf_str, base_link=base_link_name, end_link=end_link_name)
+    move_to_joint_state = MoveToJointState(hebiros_wrapper=hebi_wrap, urdf_str=urdf_str, base_link=base_link_name, end_link=end_link_name)
 
     ### CREATE TOP SM ###
     top = StateMachine(outcomes=['exit','success'])
@@ -99,12 +101,12 @@ def main():
     top.userdata.execution_time = None
     top.userdata.active_joints = None
 
-    remapping_list = ['prev_joint_pos', 'prev_joint_pos', 'target_end_link_point', 'execution_time', 'active_joints']
+    remapping_list = ['prev_joint_pos', 'prev_joint_pos', 'target_end_link_point', 'target_joint_state', 'execution_time', 'active_joints']
     remapping_dict = {userdata: userdata for userdata in remapping_list}
 
     with top:
         StateMachine.add('WAIT_FOR_MASTER', wait_for_master,
-                         transitions={'exit':'exit', 'step':'STEP', 'push':'PUSH'},
+                         transitions={'exit':'exit', 'step':'STEP', 'push':'PUSH', 'move_to_joint_state':'MOVE_TO_JOINT_STATE'},
                          remapping=remapping_dict)
 
         StateMachine.add('STEP', step,
@@ -113,6 +115,10 @@ def main():
 
         StateMachine.add('PUSH', push,
                          transitions={'ik_failed':'WAIT_FOR_MASTER', 'success':'WAIT_FOR_MASTER'},
+                         remapping=remapping_dict)
+
+        StateMachine.add('MOVE_TO_JOINT_STATE', move_to_joint_state,
+                         transitions={'success':'WAIT_FOR_MASTER'},
                          remapping=remapping_dict)
 
     sis = smach_ros.IntrospectionServer(str(rospy.get_name()), top, '/SM_ROOT' + str(rospy.get_name()))

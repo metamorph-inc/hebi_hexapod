@@ -2,6 +2,7 @@ import rospy
 from smach import State
 from std_msgs.msg import String
 from geometry_msgs.msg import Point
+from sensor_msgs.msg import JointState
 
 from hebihexapod_description.msg import LegCmd
 
@@ -24,7 +25,8 @@ class SendLegCmdsAndWait(State):
         :type response_timeout: float
         :param response_timeout: Maximum time [s] to wait for leg response after sending leg commands
         """
-        State.__init__(self, outcomes=['done','response_timeout'], input_keys=['leg_eff_pos_current','leg_eff_pos_targets'],
+        State.__init__(self, outcomes=['done','response_timeout'],
+                       input_keys=['leg_eff_pos_current','leg_eff_pos_targets','target_joint_states'],
                        output_keys=['leg_eff_pos_current'])
 
         if len(leg_behaviors) != len(to_leg_topics):
@@ -36,14 +38,14 @@ class SendLegCmdsAndWait(State):
         self.from_leg_topics = from_leg_topics
         self.response_timeout = response_timeout
 
-        self.behaviors_set = ("step","push")
+        self.behaviors_set = ("step","push","move_to_joint_state")
 
         # Create publishers
         self.to_leg_pubs = [rospy.Publisher(topic, LegCmd, tcp_nodelay=True, queue_size=1) for topic in to_leg_topics]
 
         # Create subscribers
         self.from_leg_msgs = [None] * len(self.from_leg_topics)
-        self.from_leg_subs = [rospy.Subscriber(topic, String, self._from_leg_cb, i) for i,topic in enumerate(from_leg_topics)]
+        self.from_leg_subs = [rospy.Subscriber(topic, String, self._from_leg_cb, callback_args=i) for i,topic in enumerate(from_leg_topics)]
 
         self.rate = rospy.Rate(100)
 
@@ -59,22 +61,27 @@ class SendLegCmdsAndWait(State):
             raise ValueError("len(self.leg_behaviors) != len(ud.leg_eff_pos_targets)")
 
         leg_eff_pos_targets = ud.leg_eff_pos_targets
-        assert isinstance(leg_eff_pos_targets,list)
+        leg_joint_state_targets = ud.target_joint_states
 
         # Get Leg Commands
         legcmds = []
-        for i,(behavior,target) in enumerate(zip(self.leg_behaviors,leg_eff_pos_targets)):
+        for i,behavior in enumerate(self.leg_behaviors):
 
             legcmd = None
             if behavior is not None:
                 if behavior in self.behaviors_set:
                     legcmd = LegCmd()
                     legcmd.behavior = behavior
-                    point = Point()
-                    point.x = leg_eff_pos_targets[i][0]
-                    point.y = leg_eff_pos_targets[i][1]
-                    point.z = leg_eff_pos_targets[i][2]
-                    legcmd.target_eff_position = point
+                    if behavior in ['step', 'push']:
+                        point = Point()
+                        point.x = leg_eff_pos_targets[i][0]
+                        point.y = leg_eff_pos_targets[i][1]
+                        point.z = leg_eff_pos_targets[i][2]
+                        legcmd.target_eff_position = point
+                    elif behavior in ['move_to_joint_state']:
+                        js = JointState()
+                        js.position = leg_joint_state_targets[i]
+                        legcmd.target_joint_state = js
                     legcmd.time_to_execute = self.time_to_execute
 
                     # Update userdata
@@ -115,6 +122,7 @@ class SendLegCmdsAndWait(State):
         return outcome
 
     def _from_leg_cb(self, msg, i):
+        print("_from_leg_cb initial {}".format(i))  # TODO: Why do we have so many duplicate msgs?
         if self.active:
             assert isinstance(msg, String)
             self.from_leg_msgs[i] = msg.data

@@ -1,3 +1,4 @@
 string behavior
 geometry_msgs/Point target_eff_position
+sensor_msgs/JointState target_joint_state
 float64 time_to_execute

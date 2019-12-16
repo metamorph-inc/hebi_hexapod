@@ -25,9 +25,9 @@ class WaitForMaster(State):
         :type to_master_topic: str
         :param to_master_topic: str
         """
-        State.__init__(self, outcomes=['exit', 'step', 'push'],
+        State.__init__(self, outcomes=['exit', 'step', 'push', 'move_to_joint_state'],
                        input_keys=['prev_joint_pos', 'active_joints'],
-                       output_keys=['prev_joint_pos','target_end_link_point','execution_time'])
+                       output_keys=['prev_joint_pos','target_end_link_point','target_joint_state','execution_time'])
         self.hebi_wrap = hebiros_wrapper
         self.from_master_topic = from_master_topic
         self.to_master_topic = to_master_topic
@@ -74,12 +74,9 @@ class WaitForMaster(State):
                 self._update_userdata(ud)
                 msg = self._from_master_msg
                 self._from_master_msg = None
-                if msg.behavior == "step":
+                if msg.behavior in self.get_registered_outcomes():
                     self.exit(ud)
-                    return 'step'
-                elif msg.behavior == "push":
-                    self.exit(ud)
-                    return 'push'
+                    return msg.behavior
                 else:
                     rospy.loginfo("Unrecognized LegCmd.leg_behavior [str]: %s", msg.leg_behavior)
             self._rate.sleep()
@@ -89,6 +86,7 @@ class WaitForMaster(State):
 
     def _update_userdata(self, ud):
         ud.target_end_link_point = self._from_master_msg.target_eff_position
+        ud.target_joint_state = self._from_master_msg.target_joint_state
         ud.execution_time = self._from_master_msg.time_to_execute
 
     def exit(self, ud):
